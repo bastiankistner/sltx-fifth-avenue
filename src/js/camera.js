@@ -7,7 +7,7 @@ import {regl} from '~js/renderer'
 import gui from '~js/helpers/gui'
 
 const CONFIG = {
-  fov: 45,
+  fov: 140,
   near: 0.01,
   far: 1000,
 }
@@ -46,7 +46,7 @@ export default regl({
       const {fov} = CONFIG
 
       return fov
-    }
+    },
   },
 
   uniforms: {
@@ -54,6 +54,7 @@ export default regl({
     u_view: regl.context('view'),
     u_cameraPosition: regl.context('eye'),
     u_resolution: ({viewportWidth, viewportHeight}) => {
+      // return [viewportWidth, viewportHeight]
       return [viewportWidth, viewportHeight]
     },
   },

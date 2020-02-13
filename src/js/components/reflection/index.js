@@ -67,7 +67,7 @@ const setup = regl({
 
       return {
         cameraConfig,
-        planeMatrix
+        planeMatrix,
       }
     },
     uvRotation: (context, props, batchId) => {
@@ -77,8 +77,8 @@ const setup = regl({
     },
     faceFbo: (context, {reflectionFbo}, batchId) => {
       return reflectionFbo.faces[batchId]
-    }
-  }
+    },
+  },
 })
 
 export default ({reflectionFbo, cameraConfig, rotationMatrix, texture}) => {
@@ -87,16 +87,11 @@ export default ({reflectionFbo, cameraConfig, rotationMatrix, texture}) => {
   props.fill({
     reflectionFbo,
     cameraConfig,
-    rotationMatrix
+    rotationMatrix,
   })
 
   setup(props, ({viewportWidth, viewportHeight, config, uvRotation, faceFbo}) => {
-    const textureMatrix = mat4.fromValues(
-      0.5, 0, 0, 0,
-      0, 0.5, 0, 0,
-      0, 0, 0.5, 0,
-      0.5, 0.5, 0.5, 1
-    )
+    const textureMatrix = mat4.fromValues(0.5, 0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0.5, 0, 0.5, 0.5, 0.5, 1)
 
     renderTarget.resize(viewportWidth, viewportHeight)
 
@@ -114,7 +109,7 @@ export default ({reflectionFbo, cameraConfig, rotationMatrix, texture}) => {
         reflector({
           texture,
           cameraConfig,
-          fov
+          fov,
         })
       })
     })

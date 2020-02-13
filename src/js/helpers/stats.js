@@ -14,7 +14,7 @@ const init = () => {
   document.body.appendChild(stats.dom)
 }
 
-devMode && init()
+// devMode && init()
 
 export default {
   begin: () => {

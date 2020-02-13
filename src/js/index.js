@@ -22,7 +22,7 @@ const CONFIG = {
   rotateX: 1,
   rotateY: 1,
   rotateZ: 1,
-  velocity: 0.009,
+  velocity: 0.0065,
 }
 
 gui.get((gui) => {
@@ -153,7 +153,7 @@ const animate = ({viewportWidth, viewportHeight, tick}) => {
     reflectionFbo,
     cameraConfig,
     rotationMatrix,
-    texture: contentFbo
+    texture: contentFbo,
   })
 
   camera(cameraConfig, () => {

@@ -20,16 +20,15 @@ const CONFIG = {
   rotateX: 1,
   rotateY: 1,
   rotateZ: 1,
-  scale: 1,
-  borderWidth: 0.008,
+  scale: 2.5,
+  borderWidth: 0.03,
   displacementLength: 0.028,
   reflectionOpacity: 0.3,
-  scene: 3
+  scene: 3,
 }
 
 gui.get((gui) => {
   const folder = gui.addFolder('Cube')
-
 
   folder.add(CONFIG, 'translateX', -30, 30).step(0.01)
   folder.add(CONFIG, 'translateY', -30, 30).step(0.01)
@@ -42,7 +41,7 @@ gui.get((gui) => {
   folder.add(CONFIG, 'borderWidth', 0, 0.1).step(0.01)
   folder.add(CONFIG, 'displacementLength', 0, 2).step(0.01)
   folder.add(CONFIG, 'reflectionOpacity', 0, 1).step(0.01)
-  folder.add(CONFIG, 'scene', { 'Apple': 3, 'Mask': 2, 'Displacement': 1 })
+  folder.add(CONFIG, 'scene', {Apple: 3, Mask: 2, Displacement: 1})
 })
 
 export default regl({
@@ -95,7 +94,7 @@ export default regl({
       const {scene} = CONFIG
 
       return parseFloat(scene)
-    }
+    },
   },
   attributes: {
     a_position: positions,

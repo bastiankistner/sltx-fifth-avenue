@@ -19,7 +19,7 @@ const CONFIG = {
   rotateX: 1,
   rotateY: 1,
   rotateZ: 1,
-  scale: 1.4,
+  scale: 4.32,
 }
 
 gui.get((gui) => {
